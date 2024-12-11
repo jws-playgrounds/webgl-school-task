@@ -10,8 +10,8 @@ interface Config {
 
 
 const config: Config = {
-  SITE_URL: 'https://korsmic.github.io/',
-  SITE_PATH: '',
+  SITE_URL: 'https://www.jws.work/',
+  SITE_PATH: 'playgrounds/webgl-school-task/',
   WP_PATH: '',
   IMAGE_URL: '',
   BREAK_POINT: 768,

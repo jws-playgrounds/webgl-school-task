@@ -1,7 +1,27 @@
 ---
 import metadata from "@data/metadata";
+import GAHead from './GAHead.astro';
+export interface Props {
+  pageId: string;
+}
+const { pageId } = Astro.props;
+const ttl = `${`${pageId.replace('t', '')}${metadata.global.title}`}`;
+
+const url = `${metadata.global.head_url}${pageId.replace('t', '')}`;
+
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<title>{metadata.global.title}</title>
+<GAHead />
+<title>{ttl}</title>
+<link rel='canonical' href={url} />
+<meta name='description' content={metadata.global.description} />
+<meta property='og:title' content={ttl} />
+<meta property='og:description' content={metadata.global.description} />
+<meta property='og:url' content={url} />
+<meta property='og:image' content={metadata.global.og_image} />
+<meta property='og:type' content={metadata.global.og_type} />
+<meta property='og:site_name' content={ttl} />
+<meta name='twitter:card' content='summary_large_image' />
+<link rel='shortcut icon' href={metadata.global.favicon} />

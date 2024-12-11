@@ -2,4 +2,36 @@
 @use 'include-media/dist/_include-media' as *;
 
 .l_header {
+  display: flex;
+  gap: pc(30);
+  position: absolute;
+  top: pc(50);
+  left: pc(50);
+  mix-blend-mode: difference;
+  z-index: 10;
+
+  @include media('<tab', 'screen') {
+    top: vw(30);
+    left: vw(27.5);
+  }
+
+  svg {
+    fill: #fff;
+  }
+}
+
+.l_header_logo {
+  width: pc(88);
+
+  @include media('<tab', 'screen') {
+    width: vw(65);
+  }
+}
+
+.l_header_gh {
+  width: pc(26);
+
+  @include media('<tab', 'screen') {
+    width: vw(29);
+  }
 }

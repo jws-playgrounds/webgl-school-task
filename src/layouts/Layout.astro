@@ -4,6 +4,8 @@ import "@styles/main.scss";
 import GoogleFont from "./components/GoogleFont.astro";
 import Head from "./components/Head.astro";
 import Info from "./components/Info.astro";
+import Header from './components/Header.astro';
+import Footer from './components/Footer.astro';
 
 export interface Props {
   pageId?: string;
@@ -20,11 +22,12 @@ const { pageId = "" } = Astro.props;
     />
   </head>
   <body>
-    {pageId !== "top" && <Info pageId={pageId} />}
+    <Header pageId={pageId} />
     <div class="l_wrap" data-page={pageId}>
       <main class="l_main">
         <slot />
       </main>
     </div>
+    <Footer />
   </body>
 </html>
